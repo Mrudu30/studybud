@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+{% block content %}
+
+{% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li 
+            {% if message.tags %}
+              class="{{ message.tags }}"
+            {% endif %}>
+          {{ message }}
+        </li>
+      {% endfor %}
+    </ul> 
+{% endif %}
+  
+  <div>
+    <form action="" method="post" class="mx-auto d-block">
+        {% csrf_token %}
+        {% comment %} <div class="mx-auto">
+            <label for="user">Username:</label>
+            <input type="text" name="username" placeholder="Username">
+        </div>
+        <br>
+        <div class="mx-auto">
+            <label for="pass">Password:</label>
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        <br>
+        <div class="mx-auto">
+            <label for="pass">Confirm Password:</label>
+            <input type="password" name="confirmp" placeholder="Password">
+        </div> {% endcomment %}
+        {{ form.as_p }}
+        <br>
+        <div class="mx-auto">
+            <input type="submit" class="btn btn-primary" value="Register" class="mx-auto">
+        </div>
+    </form>
+  </div>
+  <p>
+    Already have an account? <a href="{% url 'loginpage' %}">Login</a>
+  </p>
+{% endblock content %}

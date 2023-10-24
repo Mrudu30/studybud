@@ -1,0 +1,9 @@
+name: mrudani
+password: mrudu@123
+
+Normal user:
+name: mealody
+password: book@1234
+
+name: xyz
+password: smilehelps
